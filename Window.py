@@ -8,10 +8,10 @@ from World import *
 import sys
 from imageKey import KeyBind
 from GLOBAL import *
-from Screen_Message import *
-from PauseMenu import *
-from PageMenu import *
-from NewGameMenu import *
+from Interface.Screen_Message import *
+from Interface.PauseMenu import *
+from Interface.PageMenu import *
+from Interface.NewGameMenu import *
 from pygame import time as pgtime
 from PIL import Image
 

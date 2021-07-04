@@ -1,7 +1,6 @@
 
 from GLOBAL import *
 import random
-from WinScreen import *
 
 # blocks
 from Blocks.Block import *

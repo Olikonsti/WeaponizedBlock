@@ -1,7 +1,7 @@
 from GLOBAL import *
 from tkinter import *
 import tkinter.ttk as ttk
-from VerticalScrolledFrame import *
+from Interface.VerticalScrolledFrame import *
 
 class KeyBinds(Frame):
     def __init__(self, notebook, menu):

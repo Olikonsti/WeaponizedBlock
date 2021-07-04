@@ -1,7 +1,7 @@
 from GLOBAL import *
 from tkinter import *
 import tkinter.ttk as ttk
-from VerticalScrolledFrame import *
+from Interface.VerticalScrolledFrame import *
 from tkinter import colorchooser
 from tkinter import messagebox
 

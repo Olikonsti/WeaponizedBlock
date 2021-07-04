@@ -1,6 +1,6 @@
 from Blocks.Block import *
 from Blocks.Projectile import *
-from Screen_Message import *
+from Interface.Screen_Message import *
 import random
 
 

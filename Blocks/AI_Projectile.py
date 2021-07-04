@@ -1,5 +1,5 @@
 import random
-from Screen_Message import *
+from Interface.Screen_Message import *
 from Blocks.Block import *
 
 class AI_Projectile(Block):

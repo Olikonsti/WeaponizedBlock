@@ -3,10 +3,10 @@ from tkinter import *
 import tkinter.ttk as ttk
 from World import *
 
-from MenuPages.KeyBinds import *
-from MenuPages.Statistics import *
-from MenuPages.Instructions import *
-from MenuPages.Settings import *
+from Interface.MenuPages.KeyBinds import *
+from Interface.MenuPages.Statistics import *
+from Interface.MenuPages.Instructions import *
+from Interface.MenuPages.Settings import *
 
 class PageMenu(Frame):
     def __init__(self, window, master, tab=None):
