@@ -1,0 +1,40 @@
+import random
+from Screen_Message import *
+from Blocks.Block import *
+
+class AI_Projectile(Block):
+    def __init__(self, world, x, y, x_dir, y_dir):
+        super().__init__(world, x, y)
+        self.name = "AI_Projectile"
+        self.color = "#ffff08"
+        self.id = 7
+
+        self.movement = [x_dir, y_dir]
+
+    def update(self, tick):
+        Block.update(self, tick)
+
+        self.move()
+
+    def move(self):
+        try:
+            before_block = self.world.array[self.x + self.movement[0]][self.y + self.movement[1]]
+            if before_block != 0 and before_block != self:
+                Food = ["Food", "Snake", "Projectile", "AI_Projectile", "Stone"]
+                if before_block == "AI_Snake":
+                    self.kill("SELF")
+                if before_block.name in Food:
+                    before_block.kill(self.get_info())
+
+                    if self.move_to(self.x + self.movement[0], self.y + self.movement[1]) == 1:
+                        self.kill("SELF")
+                    if before_block.name == "Stone":
+                        self.kill("SELF")
+
+            else:
+                if self.move_to(self.x + self.movement[0], self.y + self.movement[1]) == 1:
+                    self.kill("SELF")
+
+
+        except:
+            pass
