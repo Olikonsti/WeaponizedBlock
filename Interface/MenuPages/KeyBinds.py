@@ -15,7 +15,7 @@ class KeyBinds(Frame):
 
         Label(self.frame.interior, text=f"Gameplay", font="System 17", fg="yellow", justify=LEFT).pack(pady=(5), padx=5,anchor="w")
         Label(self.frame.interior, text=f"W, A, S, D: Change direction", font="System 17", justify=LEFT).pack(pady=(5), padx=50, anchor="w")
-        Label(self.frame.interior, text=f"Space: Shoot", font="System 17", justify=LEFT).pack(pady=(5), padx=50, anchor="w")
+        Label(self.frame.interior, text=f"LMB: Shoot", font="System 17", justify=LEFT).pack(pady=(5), padx=50, anchor="w")
 
 
 

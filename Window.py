@@ -39,7 +39,7 @@ class Window(Tk):
         self.KEY_S = KeyBind("s", self, self.loop_tick)
         self.KEY_D = KeyBind("d", self, self.loop_tick)
 
-        self.KEY_E = KeyBind("space", self, self.loop_tick)
+        self.KEY_E = KeyBind("Button-1", self, self.loop_tick, release="ButtonRelease-1")
 
         # frames
         self.game_frame = Frame(self); self.game_frame.pack(expand=True, fill=BOTH)
@@ -168,11 +168,7 @@ class Window(Tk):
         self.save_game()
 
     def pause_invoke(self, event):
-        if event == "":
-            pass
-        else:
-            if event.char == ' ':
-                return 0
+
         if self.save.paused:
             self.save.paused = False
             self.save.in_new_game_menu = False
