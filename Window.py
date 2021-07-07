@@ -78,7 +78,7 @@ class Window(Tk):
             else:
                 self.pause_invoke("")
         except Exception as e:
-            messagebox.showwarning("Save Loading Error", f"Savefile not found or corrupted. Continue to start a fresh save. \nERROR: {e}")
+            #messagebox.showwarning("Save Loading Error", f"Savefile not found or corrupted. Continue to start a fresh save. \nERROR: {e}")
             self.new_game()
 
         self.game_canvas.config(bg=Global.data["canvas_color"])
