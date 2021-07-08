@@ -13,6 +13,7 @@ from Interface.PauseMenu import *
 from Interface.PageMenu import *
 from Interface.NewGameMenu import *
 from pygame import time as pgtime
+import pygame
 from PIL import Image
 
 class Window(Tk):
@@ -83,6 +84,8 @@ class Window(Tk):
 
         self.game_canvas.config(bg=Global.data["canvas_color"])
 
+        self.screen = pygame.display.set_mode((self.screenW, self.screenH))
+
         # mainloop
         while self.running:
             self.loop_tick()
@@ -120,6 +123,12 @@ class Window(Tk):
 
     def render_world_to_canvas(self):
         self.game_canvas.delete(ALL)
+        pygame.display.flip()
+        self.screen.fill(pygame.Color(Global.data["canvas_color"]))
+
+        # pygame draw blocks
+        for i in self.save.world.instance_array:
+            pygame.draw.rect(self.screen, pygame.Color(i.color), (i.x * self.save.world.pixel_size + self.save.xoff, i.y * self.save.world.pixel_size + self.save.yoff, self.save.world.pixel_size, self.save.world.pixel_size))
 
         if self.save.render_world:
             # draw border
@@ -127,8 +136,10 @@ class Window(Tk):
                                               self.save.world.pixel_size * self.save.world.arrayx + self.save.xoff,
                                               self.save.world.pixel_size * self.save.world.arrayy + self.save.yoff)
             # draw blocks
-            for i in self.save.world.instance_array:
-                self.game_canvas.create_rectangle(i.x * self.save.world.pixel_size + self.save.xoff, i.y * self.save.world.pixel_size + self.save.yoff, (i.x * self.save.world.pixel_size) + self.save.world.pixel_size + self.save.xoff, (i.y * self.save.world.pixel_size) + self.save.world.pixel_size + self.save.yoff, fill=i.color, outline="")
+            #for i in self.save.world.instance_array:
+                #self.game_canvas.create_rectangle(i.x * self.save.world.pixel_size + self.save.xoff, i.y * self.save.world.pixel_size + self.save.yoff, (i.x * self.save.world.pixel_size) + self.save.world.pixel_size + self.save.xoff, (i.y * self.save.world.pixel_size) + self.save.world.pixel_size + self.save.yoff, fill=i.color, outline="")
+
+
 
             if self.save.debug:
                 for j in self.save.world.array:
