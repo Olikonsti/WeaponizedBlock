@@ -216,6 +216,7 @@ class Window(Tk):
             self.save.render_world = True
 
     def invoke_godmode(self, event=None):
+        self.save.godmode_used = True
         if self.save.godmode:
             Screen_Message("Godmode mode deactivated", 100, bg="green")
             self.save.godmode = False

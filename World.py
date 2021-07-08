@@ -63,7 +63,7 @@ class World:
     def win_action(self):
         Global.window.new_game()
         Global.window.save.paused = True
-        if Global.window.save.score > Global.data["highscore"]:
+        if Global.window.save.score > Global.data["highscore"] and not Global.window.save.godmode_used:
             Screen_Message("New Highscore!", 1000, bg="orange")
             Global.data["highscore"] = Global.window.save.score
 

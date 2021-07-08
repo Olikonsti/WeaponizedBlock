@@ -10,5 +10,6 @@ class SAVE():
         self.debug = False
         self.render_world = True
         self.godmode = False
+        self.godmode_used = False
         self.data = {}
         self.in_new_game_menu = False

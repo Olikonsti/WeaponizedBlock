@@ -2,7 +2,7 @@
 
 class GLOBAL:
     def __init__(self):
-        self.version = 1.3
+        self.version = 1.4
         self.window = None
 
         # data stores data forever
