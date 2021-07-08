@@ -27,11 +27,11 @@ class Block:
             self.kill("SELF_EXCEPTION")
 
     def move_to(self, x, y):
-        if x < 1 or y < 1 or x > self.world.arrayx - 2 or y > self.world.arrayy - 2:
+        if x < 2 or y < 2 or x > self.world.arrayx - 2 or y > self.world.arrayy - 2:
             return 1
 
         try:
-            self.world.array[x][y] = self
+
             try:
                 self.world.array[self.last_x][self.last_y] = 0
             except:
@@ -42,6 +42,8 @@ class Block:
 
             self.x = x
             self.y = y
+
+            self.world.array[self.x][self.y] = self
             return 0
 
         except:
@@ -49,6 +51,9 @@ class Block:
 
     def kill(self, murder):
         self.alive = False
+        if Global.window.save.debug:
+            self.print_info()
+            print(f"killed by {murder}\n")
         try:
             self.world.array[self.x][self.y] = 0
         except:
